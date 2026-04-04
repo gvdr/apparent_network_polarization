@@ -1,0 +1,15 @@
+# Internal notes
+docs/
+
+# Julia coverage artifacts
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+
+# OS / editor junk
+*Zone.Identifier
+texput.log
+*.swp
+*.swo
+*~
+.DS_Store
