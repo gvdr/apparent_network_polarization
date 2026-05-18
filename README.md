@@ -37,7 +37,7 @@ src/            Julia package source
 test/           Unit tests
 theorems/       Numerical verification of each proposition
 experiments/    Parameter sweeps and manuscript figure scripts
-output/         Pre-generated figures and data
+output/         Generated figures and data (not tracked; produced by running the scripts)
 ```
 
 ## Running
