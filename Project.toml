@@ -1,7 +1,7 @@
 name = "PolarizationPipeline"
 uuid = "dc08819a-ef17-4a41-b999-4db9c2e3ac91"
 version = "0.1.0"
-authors = ["gvdr <giuliodr@spc.int>"]
+authors = ["gvdr <me@gvdallariva.net>"]
 
 [deps]
 AlgebraOfGraphics = "cbdf2221-f076-402e-a563-3d30da359d67"

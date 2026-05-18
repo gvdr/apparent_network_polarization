@@ -25,6 +25,12 @@ t_plot = time()
 println("Plots completed in " * string(round(t_plot - t_calib, digits=1)) * " seconds")
 
 println()
+println("--- Step 4: Appendix H graph-metrics sweep ---")
+include(joinpath(@__DIR__, "appendix_h_graph_metrics.jl"))
+t_apph = time()
+println("Appendix H sweep completed in " * string(round(t_apph - t_plot, digits=1)) * " seconds")
+
+println()
 println("=" ^ 60)
-println("Total time: " * string(round(t_plot - t_start, digits=1)) * " seconds")
+println("Total time: " * string(round(t_apph - t_start, digits=1)) * " seconds")
 println("=" ^ 60)

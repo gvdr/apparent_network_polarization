@@ -154,15 +154,35 @@ function figure_pipeline_anatomy()
         ticklabelsize=10,
         labelsize=12)
 
-    # --- Transformation labels: stacked with arrows in the SAME cell ---
-    # Top row arrows + labels (arrow on top, label below, both in row 1)
-    Label(fig[1, 2], text="\u2192\n" * "\u00d7 a(x)", fontsize=22, halign=:center, valign=:center)
-    Label(fig[1, 4], text="\u2192\n" * "\u00d7 t(x)", fontsize=22, halign=:center, valign=:center)
-    # Bottom row arrows + labels (label on top, arrow below)
-    Label(fig[3, 4], text="form edges\n" * "\u2190", fontsize=20, halign=:center, valign=:center)
-    Label(fig[3, 2], text="estimate f\n" * "\u2190", fontsize=20, halign=:center, valign=:center)
-    # Vertical arrow + label
-    Label(fig[2, 5], text="\u00d7 p(x)  \u2193", fontsize=22, halign=:center, valign=:center)
+    # --- Transformation labels: arrow and description in separate sub-rows ---
+    # Top row: arrow on top (large, bold), description below
+    let gl = GridLayout(fig[1, 2])
+        Label(gl[1, 1]; text="\u2192", fontsize=40, font=:bold, halign=:center, valign=:bottom)
+        Label(gl[2, 1]; text="\u00d7 a(x)", fontsize=16, halign=:center, valign=:top)
+        rowsize!(gl, 1, Relative(0.6))
+    end
+    let gl = GridLayout(fig[1, 4])
+        Label(gl[1, 1]; text="\u2192", fontsize=40, font=:bold, halign=:center, valign=:bottom)
+        Label(gl[2, 1]; text="\u00d7 t(x)", fontsize=16, halign=:center, valign=:top)
+        rowsize!(gl, 1, Relative(0.6))
+    end
+    # Bottom row: description on top, arrow below (large, bold)
+    let gl = GridLayout(fig[3, 4])
+        Label(gl[1, 1]; text="form edges", fontsize=16, halign=:center, valign=:bottom)
+        Label(gl[2, 1]; text="\u2190", fontsize=40, font=:bold, halign=:center, valign=:top)
+        rowsize!(gl, 2, Relative(0.6))
+    end
+    let gl = GridLayout(fig[3, 2])
+        Label(gl[1, 1]; text="estimate f", fontsize=16, halign=:center, valign=:bottom)
+        Label(gl[2, 1]; text="\u2190", fontsize=40, font=:bold, halign=:center, valign=:top)
+        rowsize!(gl, 2, Relative(0.6))
+    end
+    # Vertical arrow: description on top, arrow below (large, bold)
+    let gl = GridLayout(fig[2, 5])
+        Label(gl[1, 1]; text="\u00d7 p(x)", fontsize=16, halign=:center, valign=:center)
+        Label(gl[2, 1]; text="\u2193", fontsize=40, font=:bold, halign=:center, valign=:center)
+        rowsize!(gl, 2, Relative(0.6))
+    end
 
     # --- Sizing ---
     for col in [1, 3, 5]
@@ -172,7 +192,7 @@ function figure_pipeline_anatomy()
         colsize!(fig.layout, col, Relative(0.08))
     end
     rowsize!(fig.layout, 1, Fixed(225))
-    rowsize!(fig.layout, 2, Fixed(40))
+    rowsize!(fig.layout, 2, Fixed(70))
     rowsize!(fig.layout, 3, Fixed(225))
     rowsize!(fig.layout, 4, Fixed(30))
     rowgap!(fig.layout, 5)

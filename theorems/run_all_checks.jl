@@ -19,6 +19,9 @@ scripts = [
     "corollary3_single_filter.jl",
     "closure_positive_feedback.jl",
     "normalization_limitations.jl",
+    "appendix_h1_single_topic.jl",
+    "appendix_h2_gaussian.jl",
+    "ei_monotonicity_beyond_linear.jl",
 ]
 
 results = Pair{String, Symbol}[]
