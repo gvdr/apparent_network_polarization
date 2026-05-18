@@ -1,3 +1,7 @@
+# Generated outputs
+output/
+Manifest.toml
+
 # Internal notes
 docs/
 
